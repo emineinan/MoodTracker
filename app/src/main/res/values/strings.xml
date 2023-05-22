@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Mood Tracker</string>
+    <string name="back_button">Back</string>
+    <string name="start_mood_tracker">Start Mood Tracker</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="ok">OK</string>
+    <string name="choose_mood">Choose Mood</string>
+    <string name="mood_checkout">Mood Checkout</string>
+    <string name="mood_submitted">Your mood for today was submitted.</string>
+    <string name="happy">Happy</string>
+    <string name="happy_des">Feeling or showing pleasure or contentment.</string>
+    <string name="joyful">Joyful</string>
+    <string name="joyful_des">Feeling, expressing, or causing great pleasure and happiness.</string>
+    <string name="confused">Confused</string>
+    <string name="confused_des">Unable to think clearly; bewildered.</string>
+    <string name="sad">Sad</string>
+    <string name="sad_des">Feeling or showing sorrow; unhappy.</string>
+</resources>
