@@ -13,7 +13,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -29,9 +29,6 @@ enum class MoodTrackerScreen(@StringRes val title: Int) {
     MoodCheckout(title = R.string.mood_checkout)
 }
 
-/**
- * Composable that displays the topBar and displays back button if back navigation is possible.
- */
 @Composable
 fun MoodTrackerAppBar(
     @StringRes currentScreenTitle: Int,
@@ -56,9 +53,7 @@ fun MoodTrackerAppBar(
 }
 
 @Composable
-fun MoodTrackerApp() {
-    //Create NavController
-    val navController = rememberNavController()
+fun MoodTrackerApp(navController: NavHostController = rememberNavController()) {
     // Get current back stack entry
     val backStackEntry by navController.currentBackStackEntryAsState()
     // Get the name of the current screen
