@@ -1,22 +1,24 @@
 package com.example.moodtracker.datasource
 
+import com.example.moodtracker.R
+
 object MoodDataSource {
     val moodItems = listOf(
         Mood(
-            name = "Happy",
-            description = "Feeling or showing pleasure or contentment."
+            name = R.string.happy,
+            description = R.string.happy_des
         ),
         Mood(
-            name = "Joyful",
-            description = "Feeling, expressing, or causing great pleasure and happiness."
+            name = R.string.joyful,
+            description = R.string.joyful_des
         ),
         Mood(
-            name = "Confused",
-            description = "Unable to think clearly; bewildered"
+            name = R.string.confused,
+            description = R.string.confused_des
         ),
         Mood(
-            name = "Sad",
-            description = "Feeling or showing sorrow; unhappy."
+            name = R.string.sad,
+            description = R.string.sad_des
         )
     )
 }

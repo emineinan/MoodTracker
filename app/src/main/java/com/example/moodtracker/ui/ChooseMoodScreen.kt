@@ -15,6 +15,7 @@ import androidx.compose.material.RadioButton
 import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.material.MaterialTheme
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.example.moodtracker.datasource.Mood
@@ -29,18 +30,19 @@ fun ChooseMoodScreen(
 ) {
 
     var selectedItemName by rememberSaveable { mutableStateOf("") }
+    val context = LocalContext.current
 
     Column(modifier = modifier) {
         options.forEach { item ->
             val onClick = {
-                selectedItemName = item.name
+                selectedItemName = context.resources.getString(item.name)
             }
             ChooseMoodItemRow(
                 item = item,
                 selectedItemName = selectedItemName,
                 onClick = onClick,
                 modifier = Modifier.selectable(
-                    selected = selectedItemName == item.name,
+                    selected = selectedItemName == context.resources.getString(item.name),
                     onClick = onClick
                 )
             )
@@ -70,19 +72,20 @@ fun ChooseMoodItemRow(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically
     ) {
+        val context = LocalContext.current
         RadioButton(
-            selected = selectedItemName == item.name,
+            selected = selectedItemName == context.resources.getString(item.name),
             onClick = onClick
         )
         Column(
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
         ) {
             Text(
-                text = item.name,
+                text = context.resources.getString(item.name),
                 style = MaterialTheme.typography.h6
             )
             Text(
-                text = item.description,
+                text = context.resources.getString(item.description),
                 style = MaterialTheme.typography.body1
             )
             Divider(
@@ -105,7 +108,7 @@ fun ChooseMoodScreenButtonGroup(
         horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))
     ) {
         OutlinedButton(modifier = Modifier.weight(1f), onClick = onCancelButtonClicked) {
-            Text(stringResource(R.string.cancel).uppercase())
+            Text(stringResource(R.string.cancel))
         }
         Button(
             modifier = Modifier.weight(1f),
@@ -113,7 +116,7 @@ fun ChooseMoodScreenButtonGroup(
             enabled = selectedItemName.isNotEmpty(),
             onClick = onSubmitButtonClicked
         ) {
-            Text(stringResource(R.string.submit).uppercase())
+            Text(stringResource(R.string.submit))
         }
     }
 }

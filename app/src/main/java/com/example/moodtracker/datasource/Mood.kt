@@ -1,6 +1,8 @@
 package com.example.moodtracker.datasource
 
+import androidx.annotation.StringRes
+
 data class Mood(
-    val name: String,
-    val description: String
+    @StringRes val name: Int,
+    @StringRes val description: Int
 )
