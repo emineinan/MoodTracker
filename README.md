@@ -12,3 +12,5 @@ The Mood Tracker app built with Jetpack Compose has multiple screens to navigate
   <td valign="top"><img src=https://github.com/emineinan/deneme/assets/56589369/5f26f51d-34b6-4971-b74d-84ceb177d382 height="480" width="220"<br>
   </tr>
  </table>
+ 
+For detailed explanation, you can check the article on [Medium](https://medium.com/huawei-developers/how-to-test-the-navigation-component-in-jetpack-compose-1ab4ccaba761).
